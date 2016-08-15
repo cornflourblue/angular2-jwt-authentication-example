@@ -1,10 +1,10 @@
-﻿import { provideRouter, RouterConfig } from '@angular/router';
+﻿import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/index';
 import { HomeComponent } from './home/index';
 import { AuthGuard } from './_guards/index';
 
-const routes: RouterConfig = [
+const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
 
@@ -12,6 +12,4 @@ const routes: RouterConfig = [
     { path: '**', redirectTo: '' }
 ];
 
-export const appRouterProviders = [
-    provideRouter(routes)
-];
+export const routing = RouterModule.forRoot(appRoutes);
