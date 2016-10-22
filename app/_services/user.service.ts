@@ -8,8 +8,6 @@ import { User } from '../_models/index';
 
 @Injectable()
 export class UserService {
-    private token: string;
-
     constructor(
         private http: Http,
         private authenticationService: AuthenticationService) {
